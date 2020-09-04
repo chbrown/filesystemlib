@@ -6,3 +6,8 @@ try:
     __version__ = pkg_resources.get_distribution("filesystemlib").version
 except Exception:
     pass
+
+
+from .chmod import chmod
+from .makedirs import makedirs
+from .walk import walk
