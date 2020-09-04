@@ -10,4 +10,5 @@ except Exception:
 
 from .chmod import chmod
 from .makedirs import makedirs
+from .move import move
 from .walk import walk
