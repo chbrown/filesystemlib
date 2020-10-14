@@ -27,7 +27,7 @@ def walk(
     by default such errors are logged (at "warning" level) but otherwise ignored.
     """
     yield path
-    if maxdepth > 0 and path.is_dir():
+    if maxdepth > 0 and not path.is_symlink() and path.is_dir():
         try:
             children = os.scandir(path)
             if sortkey:
