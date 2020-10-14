@@ -11,6 +11,9 @@ def makedirs(path: Pathable, mode: int = 0o777, *, dry_run: bool = False) -> Pat
     Make directory at `path` if it doesn't already exist, including any missing parent
     directories.
     """
+    if not path:
+        # e.g., if called with the dirname of a lone filename (which is "")
+        return path
     if os.path.exists(path) and os.path.isdir(path):
         return path
     logger.info(
